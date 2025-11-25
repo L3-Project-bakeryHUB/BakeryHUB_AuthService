@@ -1,0 +1,53 @@
+// Prisma Client Generator
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+// Database Connection
+datasource db {
+  provider = "postgresql"
+ 
+}
+
+//
+// ------------------------ MODELS ------------------------
+//
+
+model User {
+  id         Int       @id @default(autoincrement())
+  firstName  String
+  lastName   String
+  email      String    @unique
+  password   String
+  isActive   Boolean   @default(true)
+  contactNo  Int
+  role_ID    Int
+  outlet_ID  Int
+  lastLogin  DateTime?
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+
+  // Relations
+  outlet     Outlet    @relation(fields: [outlet_ID], references: [outlet_ID])
+  role       Role      @relation(fields: [role_ID], references: [role_id])
+}
+
+model Role {
+  role_id     Int      @id @unique
+  role_name   String   @unique
+  description String?
+  
+  // Relation
+  users       User[]
+}
+
+model Outlet {
+  outlet_ID    Int      @id @unique
+  outlet_name  String
+  location     String
+  telephone    Int
+
+  // Relation
+  users        User[]
+}
