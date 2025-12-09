@@ -1,0 +1,19 @@
+{
+  "name": "backendauthservice",
+  "version": "1.0.0",
+  "description": "backend authentication and authorization",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/L3-Project-bakeryHUB/BakeryHUB_AuthService.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/L3-Project-bakeryHUB/BakeryHUB_AuthService/issues"
+  },
+  "homepage": "https://github.com/L3-Project-bakeryHUB/BakeryHUB_AuthService#readme"
+}
